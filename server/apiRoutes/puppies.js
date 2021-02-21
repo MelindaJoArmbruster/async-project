@@ -1,5 +1,3 @@
-const lobFunc = require('../lob/createPostcard');
-
 // apiRoutes/puppies.js
 const router = require('express').Router();
 
@@ -8,10 +6,7 @@ router.get('/', function (req, res, next) {
   /* etc */
 });
 // matches POST requests to /api/puppies/
-router.post('/', async function (req, res, next) {
-  const x = await lobFunc();
-  res.send(x);
-
+router.post('/', function (req, res, next) {
   /* etc */
 });
 // matches PUT requests to /api/puppies/:puppyId
