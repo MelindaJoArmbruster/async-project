@@ -1,4 +1,6 @@
-const Lob = require('lob')('test_d9bd4c38596baf59f9607b5210730cd0a0c');
+require('../../localSecrets');
+
+const Lob = require('lob')(process.env.LOB_API_TEST_KEY);
 const cardDetails = require('./cardDetails');
 
 async function lobApiPostcard(cardDetails) {
