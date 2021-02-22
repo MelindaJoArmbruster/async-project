@@ -7,7 +7,12 @@ const db = require('./database');
 //
 // Puppy.belongsTo(Owner)
 
+Template.hasMany(Order);
+Order.belongsTo(Template);
+
 module.exports = {
   // Include your models in this exports object as well!
   db,
+  Template,
+  Order,
 };
