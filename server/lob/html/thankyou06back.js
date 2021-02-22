@@ -1,9 +1,8 @@
 const back = `<html>
 <head>
 <meta charset="UTF-8">
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Pacifico&display=swap" rel="stylesheet">
 <title>Lob.com Address Verification 4x6 Postcard Template Back</title>
 <style>
 
@@ -32,8 +31,8 @@ const back = `<html>
 
   #banner {
     height: 1in;
-    background-color: #9e98e0;
-    font-family: 'Dancing Script';
+    background-color: #f15046;
+    font-family: 'Pacifico';
     font-weight: 700;
     font-size: .32in;
     text-transform: uppercase;
@@ -49,14 +48,15 @@ const back = `<html>
     height: 2in;
     top: 1.1in;
     left: .25in;
-    font-family: 'Dancing Script';
+    font-family: 'Nothing You Could Do';
     font-weight: 400;
     font-size: .15in;
   }
 
 
   .accent {
-    color: #675dce;
+    color: #f15046;
+    font-weight: bold;
   }
 
 </style>
@@ -64,7 +64,7 @@ const back = `<html>
 
 <body>
   <div id="banner">
-    Thank You
+    THANK YOU
   </div>
 
   <!-- do not put text outside of the safe area -->

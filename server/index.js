@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { db } = require('./db');
 const app = require('./app');
 const PORT = process.env.PORT || 3000; // this can be very useful if you deploy to Heroku!

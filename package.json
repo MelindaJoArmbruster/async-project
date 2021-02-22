@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
+    "seed": "node seed.js",
     "start-dev": "webpack -w & nodemon server",
     "send-card": "node server/lob/testLobApi.js"
   },
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/MelindaJoArmbruster/Boilerplate#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "lob": "^6.1.1",
     "pg": "^8.5.1",

@@ -1,4 +1,5 @@
-const front = `<html>
+const front = `
+<html>
 <head>
 <meta charset="UTF-8">
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700' rel='stylesheet' type='text/css'>
@@ -17,7 +18,7 @@ const front = `<html>
     margin: 0;
     padding: 0;
     /* your background image should have dimensions of 1875x1275 pixels. */
-    background-image: url('https://rev4labs.com/images/gratitude/thankyou-01.jpg');
+    background-image: url('https://rev4labs.com/images/gratitude/thankyou-03.jpg');
     background-size: 6.25in 4.25in;
     background-repeat: no-repeat;
   }
@@ -60,7 +61,7 @@ const front = `<html>
   <!-- do not put text outside of the safe area -->
   <div id="safe-area">
 
-
+    
 
   </div>
 </body>

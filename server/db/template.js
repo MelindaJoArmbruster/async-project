@@ -6,10 +6,10 @@ module.exports = db.define('template', {
     type: Sequelize.STRING,
   },
   frontHTML: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
   },
   backHTML: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
   },
   frontImageURL: {
     type: Sequelize.STRING,

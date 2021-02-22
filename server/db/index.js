@@ -1,4 +1,6 @@
 const db = require('./database');
+const Template = require('./template');
+const Order = require('./order');
 //import models here
 
 // This is a great place to establish associations between your models

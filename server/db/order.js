@@ -2,9 +2,6 @@ const Sequelize = require('sequelize');
 const db = require('./database');
 
 module.exports = db.define('order', {
-  description: {
-    type: Sequelize.STRING,
-  },
   to_name: {
     type: Sequelize.STRING,
   },
@@ -41,10 +38,7 @@ module.exports = db.define('order', {
   from_address_zip: {
     type: Sequelize.STRING,
   },
-  front: {
-    type: Sequelize.STRING,
-  },
-  back: {
+  merge_variables_greeting: {
     type: Sequelize.STRING,
   },
   merge_variables_message: {

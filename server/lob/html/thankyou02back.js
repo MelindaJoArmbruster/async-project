@@ -71,7 +71,7 @@ const back = `<html>
   <!-- do not put text outside of the safe area -->
   <div id="safe-area">
     <div id="message">
-      <span class="accent">{{toName}},</span>
+      <span class="accent">{{greeting}},</span>
       <br><br>
       {{message}}
       <br><br>
