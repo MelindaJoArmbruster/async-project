@@ -1,5 +1,4 @@
-const front = `
-<html>
+const front = `<html>
 <head>
 <meta charset="UTF-8">
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700' rel='stylesheet' type='text/css'>
@@ -61,7 +60,7 @@ const front = `
   <!-- do not put text outside of the safe area -->
   <div id="safe-area">
 
-    
+
 
   </div>
 </body>

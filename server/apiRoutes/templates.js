@@ -5,7 +5,34 @@ const { Template, Order } = require('../db');
 // matches GET requests to /api/templates/
 router.get('/', async function (req, res, next) {
   try {
-    res.send(await Template.findAll());
+    res.send(
+      await Template.findAll({
+        attributes: [
+          'id',
+          'name',
+          'frontImageURL',
+          'backImageURL',
+          'description',
+        ],
+      })
+    );
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get('/:templateId', async (req, res, next) => {
+  try {
+    const template = await Template.findByPk(req.params.templateId, {
+      attributes: [
+        'id',
+        'name',
+        'frontImageURL',
+        'backImageURL',
+        'description',
+      ],
+    });
+    res.send(template);
   } catch (err) {
     next(err);
   }

@@ -53,7 +53,7 @@ router.get('/:orderId', async (req, res, next) => {
     };
 
     const lobApiResponse = await lobApiPostcard(cardDetails);
-
+    console.log(lobApiResponse);
     res.send(lobApiResponse);
   } catch (err) {
     next(err);

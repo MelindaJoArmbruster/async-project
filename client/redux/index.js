@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 //replace the reducers below as needed
-import defaultReducer1 from './defaultReducer1';
-import defaultReducer2 from './defaultReducer2';
+import templatesReducer from './templatesReducer';
+import singleTemplateReducer from './singleTemplateReducer';
 
 const appReducer = combineReducers({
-  default1: defaultReducer1,
-  default2: defaultReducer2,
+  templatesSlice: templatesReducer,
+  singleTemplateSlice: singleTemplateReducer,
+  // default2: defaultReducer2,
   //replace reducers above and add other reducers as needed
 });
 
