@@ -2,12 +2,12 @@ import { combineReducers } from 'redux';
 //replace the reducers below as needed
 import templatesReducer from './templatesReducer';
 import singleTemplateReducer from './singleTemplateReducer';
+import orderReducer from './orderReducer';
 
 const appReducer = combineReducers({
   templatesSlice: templatesReducer,
   singleTemplateSlice: singleTemplateReducer,
-  // default2: defaultReducer2,
-  //replace reducers above and add other reducers as needed
+  orderSlice: orderReducer,
 });
 
 export default appReducer;

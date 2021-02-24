@@ -27,10 +27,16 @@ class SingleTemplateView extends React.Component {
             src={this.props.singleTemplate.backImageURL}
           />
         </div>
+        <Link
+          to={{ pathname: '/order', templateId: this.props.singleTemplate.id }}
+        >
+          <button className='button'>Personalize</button>
+        </Link>
       </div>
     );
   }
 }
+//still need to pass the templateId to the order form somehow.
 
 const mapStateToProps = (state) => {
   return {

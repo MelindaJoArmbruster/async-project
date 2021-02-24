@@ -3,27 +3,12 @@ const { Template, Order } = require('../db');
 const lobApiPostcard = require('../lob');
 
 // matches POST requests to /api/orders/
-//should this be taking in data
-//from our form and creating a new order record in the orders table?
 router.post('/', async function (req, res, next) {
-  // try {
-  //   res.status(201).send(await Order.create(req.body));
-  // } catch (err) {
-  //   next(err);
-  // }
-});
-
-//matches GET req to /api/orders/:orderId
-//Where do we pull the order info from the orders table and
-//build up the object to send to Lob then call index.js to actually send it?
-router.get('/:orderId', async (req, res, next) => {
   try {
-    const order = await Order.findByPk(req.params.orderId, {
-      //put this in post route except orderId
-      //will come from the response from post
+    const clientOrder = await Order.create(req.body);
+    const order = await Order.findByPk(clientOrder.id, {
       include: [Template],
     });
-
     const cardDetails = {
       description: order.template.name,
       to: {
@@ -51,10 +36,28 @@ router.get('/:orderId', async (req, res, next) => {
         fromName: order.merge_variables_fromName,
       },
     };
-
     const lobApiResponse = await lobApiPostcard(cardDetails);
-    console.log(lobApiResponse);
-    res.send(lobApiResponse);
+    const lobResponseDetails = {
+      lobId: lobApiResponse.id,
+      lobPdfURL: lobApiResponse.url,
+      lobFrontPngURL: lobApiResponse.thumbnails[0].large,
+      lobBackPngURL: lobApiResponse.thumbnails[1].large,
+      lobMailType: lobApiResponse.mail_type,
+      lobExpectedDeliveryDate: lobApiResponse.expected_delivery_date,
+    };
+    const response = await clientOrder.update(lobResponseDetails);
+    res.send(response);
+  } catch (err) {
+    next(err);
+  }
+});
+
+//matches GET req to /api/orders/:orderId
+
+router.get('/:orderId', async (req, res, next) => {
+  try {
+    const order = await Order.findByPk(req.params.orderId);
+    res.send(order);
   } catch (err) {
     next(err);
   }

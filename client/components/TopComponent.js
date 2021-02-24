@@ -9,6 +9,8 @@ import {
 import Home from './Home';
 import AllTemplates from './AllTemplates';
 import SingleTemplateView from './SingleTemplateView';
+import OrderForm from './OrderForm';
+import Confirmation from './Confirmation';
 
 const TopComponent = () => {
   return (
@@ -36,6 +38,8 @@ const TopComponent = () => {
             />
             <Route exact path='/' component={Home} />
             <Route exact path='/templates' component={AllTemplates} />
+            <Route exact path='/order' component={OrderForm} />
+            <Route exact path='/confirmation' component={Confirmation} />
           </Switch>
         </main>
       </div>

@@ -50,4 +50,22 @@ module.exports = db.define('order', {
   merge_variables_fromName: {
     type: Sequelize.STRING,
   },
+  lobId: {
+    type: Sequelize.STRING,
+  },
+  lobPdfURL: {
+    type: Sequelize.STRING,
+  },
+  lobFrontPngURL: {
+    type: Sequelize.STRING,
+  },
+  lobBackPngURL: {
+    type: Sequelize.STRING,
+  },
+  lobMailType: {
+    type: Sequelize.STRING,
+  },
+  lobExpectedDeliveryDate: {
+    type: Sequelize.STRING,
+  },
 });
