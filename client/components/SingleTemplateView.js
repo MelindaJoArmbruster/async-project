@@ -30,13 +30,15 @@ class SingleTemplateView extends React.Component {
         <Link
           to={{ pathname: '/order', templateId: this.props.singleTemplate.id }}
         >
-          <button className='button'>Personalize</button>
+          <button id='personalize'>Personalize This Card</button>
+        </Link>
+        <Link to={{ pathname: '/templates' }}>
+          <button className='button'>Back to All Templates</button>
         </Link>
       </div>
     );
   }
 }
-//still need to pass the templateId to the order form somehow.
 
 const mapStateToProps = (state) => {
   return {

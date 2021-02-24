@@ -29,7 +29,7 @@ const TopComponent = () => {
             Show All Templates
           </NavLink>
         </nav>
-        <main>
+        <main id='main'>
           <Switch>
             <Route
               exact

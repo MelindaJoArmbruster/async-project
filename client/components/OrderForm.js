@@ -7,82 +7,84 @@ class OrderForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      to_name: '',
-      to_address_line1: '',
+      to_name: 'melinda',
+      to_address_line1: '142 Lions Ct',
       to_address_line2: '',
-      to_address_city: '',
-      to_address_state: '',
-      to_address_zip: '',
-      from_name: '',
-      from_address_line1: '',
+      to_address_city: 'Lake Zurich',
+      to_address_state: 'IL',
+      to_address_zip: '60047',
+      from_name: 'chris',
+      from_address_line1: '157 Lions Ct',
       from_address_line2: '',
-      from_address_city: '',
-      from_address_state: '',
-      from_address_zip: '',
-      merge_variables_greeting: '',
-      merge_variables_message: '',
-      merge_variables_salutation: '',
-      merge_variables_fromName: '',
+      from_address_city: 'Lake Zurich',
+      from_address_state: 'IL',
+      from_address_zip: '60047',
+      merge_variables_greeting: 'Hi',
+      merge_variables_message: 'dfsefr',
+      merge_variables_salutation: 'frsrf',
+      merge_variables_fromName: 'lj',
       templateId: this.props.location.templateId,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(evt) {
-    console.log(evt.target.value);
     this.setState({
       [evt.target.name]: evt.target.value,
     });
   }
 
-  async handleSubmit(evt) {
-    evt.preventDefault();
-    this.props.submitOrder({ ...this.state });
-  }
+  // async handleSubmit(evt) {
+  //   evt.preventDefault();
+  //   this.props.submitOrder({ ...this.state });
+  // }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <h2>
           To place an order, all of the following fields must be competed
           (excluding To address line 2 and From address line 2):
         </h2>
-        <label htmlFor='to_name'>To (first and last name):</label>
-        <input
-          name='to_name'
-          onChange={this.handleChange}
-          value={this.state.to_name}
-        />
+        <fieldset>
+          <legend>Recipient Details</legend>
+          <label htmlFor='to_name'>To (first and last name):</label>
+          <input
+            name='to_name'
+            onChange={this.handleChange}
+            value={this.state.to_name}
+          />
+        </fieldset>
+        <div id='toAddress' className='flexCol'>
+          <label htmlFor='to_address_line1'>To Address (line 1):</label>
+          <input
+            name='to_address_line1'
+            onChange={this.handleChange}
+            value={this.state.to_address_line1}
+          />
 
-        <label htmlFor='to_address_line1'>To Address (line 1):</label>
-        <input
-          name='to_address_line1'
-          onChange={this.handleChange}
-          value={this.state.to_address_line1}
-        />
+          <label htmlFor='to_address_line2'>To Address (line 2):</label>
+          <input
+            name='to_address_line2'
+            onChange={this.handleChange}
+            value={this.state.to_address_line2}
+          />
 
-        <label htmlFor='to_address_line2'>To Address (line 2):</label>
-        <input
-          name='to_address_line2'
-          onChange={this.handleChange}
-          value={this.state.to_address_line2}
-        />
+          <label htmlFor='to_address_city'>To Address (city):</label>
+          <input
+            name='to_address_city'
+            onChange={this.handleChange}
+            value={this.state.to_address_city}
+          />
 
-        <label htmlFor='to_address_city'>To Address (city):</label>
-        <input
-          name='to_address_city'
-          onChange={this.handleChange}
-          value={this.state.to_address_city}
-        />
-
-        <label htmlFor='to_address_state'>To Address (state):</label>
-        <input
-          name='to_address_state'
-          onChange={this.handleChange}
-          value={this.state.to_address_state}
-        />
-
+          <label htmlFor='to_address_state'>To Address (state):</label>
+          <input
+            name='to_address_state'
+            onChange={this.handleChange}
+            value={this.state.to_address_state}
+          />
+        </div>
         <label htmlFor='to_address_zip'>To Address (zipcode):</label>
         <input
           name='to_address_zip'
@@ -175,10 +177,11 @@ class OrderForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    submitOrder: (order) => dispatch(addOrder(order)),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     submitOrder: (order) => dispatch(addOrder(order)),
+//   };
+// };
 
-export default connect(null, mapDispatchToProps)(OrderForm);
+// export default connect(null, mapDispatchToProps)(OrderForm);
+export default OrderForm;

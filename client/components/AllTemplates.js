@@ -18,15 +18,13 @@ class AllTemplates extends React.Component {
     }
     // const templatesArray = this.props.templates;
     return (
-      <div>
-        <h2>Choose a Card Template</h2>
+      <div id='allTemplates'>
+        <h2>Choose a card name to display more details</h2>
 
-        <div>
-          <div className='allTemplatesList'>
-            {this.props.templateArray.map((template) => (
-              <SingleTemplateCard key={template.id} template={template} />
-            ))}
-          </div>
+        <div className='allTemplatesList'>
+          {this.props.templateArray.map((template) => (
+            <SingleTemplateCard key={template.id} template={template} />
+          ))}
         </div>
       </div>
     );

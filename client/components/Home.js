@@ -8,19 +8,21 @@ const Home = () => {
 
       <div className='homePgLorem'>
         <p>
-          A long time ago in a galaxy far, far, away...Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut tortor pretium viverra suspendisse.
-          Ut ornare lectus sit amet est.
+          Welcome to Gratitude, where sending a simple thank-you is just that -
+          simple! You won't have to go to the store, waste time and money on an
+          expensive card, only to get home to discover that you are out of
+          postage stamps. Ugh!
         </p>
         <p>
-          Urna id volutpat lacus laoreet non curabitur gravida arcu ac. Tortor
-          condimentum lacinia quis vel eros. Pharetra convallis posuere morbi
-          leo.
+          Instead, why not browse online in the comfort of your own home? Choose
+          one of our beautiful postcards, personalize your message and click
+          send. No more hunting postage stamps and putting something in the mail
+          box! Your recipient gets a friendly reminder of your gratitude and you
+          get more time to do other things! Win, win!
         </p>
         <p>
-          Placerat in egestas erat imperdiet sed. Accumsan tortor posuere ac ut
-          consequat. Enim eu turpis egestas pretium aenean pharetra magna ac.
+          Click the link at the top of this page to view our selection of
+          stunning cards today!
         </p>
       </div>
     </div>

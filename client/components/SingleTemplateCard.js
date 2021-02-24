@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SingleTemplateCard = (props) => {
   return (
-    <div className='flexCol'>
+    <div>
       <div className='templateCard'>
         <img
           className='singleTemplateImage'
