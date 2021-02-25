@@ -37,7 +37,7 @@ class OrderForm extends React.Component {
   render() {
     return (
       <form>
-        <h2>To place an order, complete the following fields:</h2>
+        <h2>To mail a postcard, complete the following fields:</h2>
         <div className='orderContainer'>
           <fieldset className='fieldset'>
             <legend>Recipient Details</legend>
@@ -90,7 +90,15 @@ class OrderForm extends React.Component {
               placeholder='Greeting (i.e. Dear Jim,)'
             />
 
-            <input
+            {/* <input
+              name='merge_variables_message'
+              className='inputFullTall'
+              onChange={this.handleChange}
+              value={this.state.merge_variables_message}
+              placeholder='Type your personal message here'
+            /> */}
+
+            <textarea
               name='merge_variables_message'
               className='inputFullTall'
               onChange={this.handleChange}

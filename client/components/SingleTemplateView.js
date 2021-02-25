@@ -27,14 +27,19 @@ class SingleTemplateView extends React.Component {
             src={this.props.singleTemplate.backImageURL}
           />
         </div>
-        <Link
-          to={{ pathname: '/order', templateId: this.props.singleTemplate.id }}
-        >
-          <button id='personalize'>Personalize This Card</button>
-        </Link>
-        <Link to={{ pathname: '/templates' }}>
-          <button className='button'>Back to All Templates</button>
-        </Link>
+        <div className='linkDiv'>
+          <Link
+            to={{
+              pathname: '/order',
+              templateId: this.props.singleTemplate.id,
+            }}
+          >
+            <button id='personalize'>Personalize This Card</button>
+          </Link>
+          <Link to={{ pathname: '/templates' }}>
+            <button className='button'>Back to All Templates</button>
+          </Link>
+        </div>
       </div>
     );
   }

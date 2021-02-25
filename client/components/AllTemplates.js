@@ -18,7 +18,7 @@ class AllTemplates extends React.Component {
     }
     // const templatesArray = this.props.templates;
     return (
-      <div id='allTemplates'>
+      <div className='allTemplates'>
         <h2>Choose a card name to display more details</h2>
 
         <div className='allTemplatesList'>

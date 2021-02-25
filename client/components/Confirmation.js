@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addOrder } from '../redux/orderReducer';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Confirmation extends React.Component {
   constructor(props) {
@@ -58,15 +59,22 @@ class Confirmation extends React.Component {
     return (
       <div>
         <div>
-          Delivery Date: {this.props.confirmation.lobExpectedDeliveryDate}
+          Estimated Delivery Date:{' '}
+          {this.props.confirmation.lobExpectedDeliveryDate}
           <br></br>
-          <a href={this.props.confirmation.lobBackPngURL}>View</a>
+          Direct mail id number: {this.props.confirmation.lobId}
         </div>
+        <div>The images below may take 10-15 seconds to load...</div>
         <div>
           <img className='singleTemplateImage' src={this.state.backImageURL} />
         </div>
         <div>
           <img className='singleTemplateImage' src={this.state.frontImageURL} />
+        </div>
+        <div>
+          <Link to={{ pathname: '/templates' }}>
+            <button className='button'>Choose another card</button>
+          </Link>
         </div>
       </div>
     );

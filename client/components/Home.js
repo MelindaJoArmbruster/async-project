@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className='homePgParent'>
-      <img className='banner' src='/images/thankyou-01-front.png' />
+      <img className='banner' src='/images/banner-thankyou-01.jpg' />
 
       <div className='homePgLorem'>
         <p>
