@@ -40,15 +40,56 @@ nav > h1 {
   justify-content: center;
 }
 
-.flexCol {
+.orderContainer {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
-.flexRow {
+.fieldset {
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 48%;
+}
+
+.inputFull {
+  width: 99%;
+  height: 30px;
+  margin: 2px;
+  align-self: flex-start;
+}
+
+.inputFullTall {
+  width: 99%;
+  height: 60px;
+  margin: 2px;
   display: flex;
-  align-self: stretch;
-  justify-content: center;
+  align-items: flex-start;
+  align-self: flex-start;
+  vertical-align: top;
+}
+
+.inputHalf {
+  width: 50%;
+  height: 30px;
+  margin: 2px;
+}
+
+.inputQuarter {
+  width: 24%;
+  height: 30px;
+  margin: 2px;
+}
+
+.addressRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#orderSubmit {
+  margin-top: 75px;
+  align-self: flex-end;
 }
 
 .allTemplatesList {
@@ -68,4 +109,9 @@ nav > h1 {
 
 .button {
   font-size: 15px;
+}
+
+button {
+  background-color: slateblue;
+  color: white;
 }

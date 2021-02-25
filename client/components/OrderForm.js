@@ -7,26 +7,25 @@ class OrderForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      to_name: 'melinda',
-      to_address_line1: '142 Lions Ct',
+      to_name: '',
+      to_address_line1: '',
       to_address_line2: '',
-      to_address_city: 'Lake Zurich',
-      to_address_state: 'IL',
-      to_address_zip: '60047',
-      from_name: 'chris',
-      from_address_line1: '157 Lions Ct',
+      to_address_city: '',
+      to_address_state: '',
+      to_address_zip: '',
+      from_name: '',
+      from_address_line1: '',
       from_address_line2: '',
-      from_address_city: 'Lake Zurich',
-      from_address_state: 'IL',
-      from_address_zip: '60047',
-      merge_variables_greeting: 'Hi',
-      merge_variables_message: 'dfsefr',
-      merge_variables_salutation: 'frsrf',
-      merge_variables_fromName: 'lj',
+      from_address_city: '',
+      from_address_state: '',
+      from_address_zip: '',
+      merge_variables_greeting: '',
+      merge_variables_message: '',
+      merge_variables_salutation: '',
+      merge_variables_fromName: '',
       templateId: this.props.location.templateId,
     };
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(evt) {
@@ -35,143 +34,139 @@ class OrderForm extends React.Component {
     });
   }
 
-  // async handleSubmit(evt) {
-  //   evt.preventDefault();
-  //   this.props.submitOrder({ ...this.state });
-  // }
-
   render() {
     return (
       <form>
-        <h2>
-          To place an order, all of the following fields must be competed
-          (excluding To address line 2 and From address line 2):
-        </h2>
-        <fieldset>
-          <legend>Recipient Details</legend>
-          <label htmlFor='to_name'>To (first and last name):</label>
-          <input
-            name='to_name'
-            onChange={this.handleChange}
-            value={this.state.to_name}
-          />
-        </fieldset>
-        <div id='toAddress' className='flexCol'>
-          <label htmlFor='to_address_line1'>To Address (line 1):</label>
-          <input
-            name='to_address_line1'
-            onChange={this.handleChange}
-            value={this.state.to_address_line1}
-          />
+        <h2>To place an order, complete the following fields:</h2>
+        <div className='orderContainer'>
+          <fieldset className='fieldset'>
+            <legend>Recipient Details</legend>
+            <input
+              name='to_name'
+              className='inputFull'
+              onChange={this.handleChange}
+              value={this.state.to_name}
+              placeholder='Name'
+            />
 
-          <label htmlFor='to_address_line2'>To Address (line 2):</label>
-          <input
-            name='to_address_line2'
-            onChange={this.handleChange}
-            value={this.state.to_address_line2}
-          />
+            <input
+              name='to_address_line1'
+              className='inputFull'
+              onChange={this.handleChange}
+              value={this.state.to_address_line1}
+              placeholder='Street Address'
+            />
+            <div className='addressRow'>
+              <input
+                name='to_address_city'
+                className='inputHalf'
+                onChange={this.handleChange}
+                value={this.state.to_address_city}
+                placeholder='City'
+              />
 
-          <label htmlFor='to_address_city'>To Address (city):</label>
-          <input
-            name='to_address_city'
-            onChange={this.handleChange}
-            value={this.state.to_address_city}
-          />
+              <input
+                name='to_address_state'
+                className='inputQuarter'
+                onChange={this.handleChange}
+                value={this.state.to_address_state}
+                placeholder='State'
+              />
 
-          <label htmlFor='to_address_state'>To Address (state):</label>
-          <input
-            name='to_address_state'
-            onChange={this.handleChange}
-            value={this.state.to_address_state}
-          />
+              <input
+                name='to_address_zip'
+                className='inputQuarter'
+                onChange={this.handleChange}
+                value={this.state.to_address_zip}
+                placeholder='Zip'
+              />
+            </div>
+
+            <input
+              name='merge_variables_greeting'
+              className='inputFull'
+              onChange={this.handleChange}
+              value={this.state.merge_variables_greeting}
+              placeholder='Greeting (i.e. Dear Jim,)'
+            />
+
+            <input
+              name='merge_variables_message'
+              className='inputFullTall'
+              onChange={this.handleChange}
+              value={this.state.merge_variables_message}
+              placeholder='Type your personal message here'
+            />
+
+            <input
+              name='merge_variables_salutation'
+              className='inputFull'
+              onChange={this.handleChange}
+              value={this.state.merge_variables_salutation}
+              placeholder='Salutation (i.e. Sincerely,)'
+            />
+
+            <input
+              name='merge_variables_fromName'
+              className='inputFull'
+              onChange={this.handleChange}
+              value={this.state.merge_variables_fromName}
+              placeholder='Sender Name'
+            />
+          </fieldset>
+          <fieldset className='fieldset'>
+            <legend>Sender Details</legend>
+
+            <input
+              name='from_name'
+              className='inputFull'
+              onChange={this.handleChange}
+              value={this.state.from_name}
+              placeholder='Name'
+            />
+
+            <input
+              name='from_address_line1'
+              className='inputFull'
+              onChange={this.handleChange}
+              value={this.state.from_address_line1}
+              placeholder='Street Address'
+            />
+            <div className='addressRow'>
+              <input
+                name='from_address_city'
+                className='inputHalf'
+                onChange={this.handleChange}
+                value={this.state.from_address_city}
+                placeholder='City'
+              />
+
+              <input
+                name='from_address_state'
+                className='inputQuarter'
+                onChange={this.handleChange}
+                value={this.state.from_address_state}
+                placeholder='State'
+              />
+
+              <input
+                name='from_address_zip'
+                className='inputQuarter'
+                onChange={this.handleChange}
+                value={this.state.from_address_zip}
+                placeholder='Zip'
+              />
+            </div>
+
+            <div id='orderSubmit'>
+              <Link
+                to={{ pathname: '/confirmation', order: { ...this.state } }}
+              >
+                <button className='button'>Send Card</button>
+              </Link>
+            </div>
+          </fieldset>
         </div>
-        <label htmlFor='to_address_zip'>To Address (zipcode):</label>
-        <input
-          name='to_address_zip'
-          onChange={this.handleChange}
-          value={this.state.to_address_zip}
-        />
-
-        <label htmlFor='from_name'>From (first and last name):</label>
-        <input
-          name='from_name'
-          onChange={this.handleChange}
-          value={this.state.from_name}
-        />
-
-        <label htmlFor='from_address_line1'>From Address (line 1):</label>
-        <input
-          name='from_address_line1'
-          onChange={this.handleChange}
-          value={this.state.from_address_line1}
-        />
-
-        <label htmlFor='from_address_line2'>From Address (line 2):</label>
-        <input
-          name='from_address_line2'
-          onChange={this.handleChange}
-          value={this.state.from_address_line2}
-        />
-
-        <label htmlFor='from_address_city'>From Address (city):</label>
-        <input
-          name='from_address_city'
-          onChange={this.handleChange}
-          value={this.state.from_address_city}
-        />
-
-        <label htmlFor='from_address_state'>From Address (state):</label>
-        <input
-          name='from_address_state'
-          onChange={this.handleChange}
-          value={this.state.from_address_state}
-        />
-
-        <label htmlFor='from_address_zip'>From Address (zipcode):</label>
-        <input
-          name='from_address_zip'
-          onChange={this.handleChange}
-          value={this.state.from_address_zip}
-        />
-
-        <label htmlFor='merge_variables_greeting'>
-          Greeting: (for example: "Dear Charles,")
-        </label>
-        <input
-          name='merge_variables_greeting'
-          onChange={this.handleChange}
-          value={this.state.merge_variables_greeting}
-        />
-
-        <label htmlFor='merge_variables_message'>Message:</label>
-        <input
-          name='merge_variables_message'
-          onChange={this.handleChange}
-          value={this.state.merge_variables_message}
-        />
-
-        <label htmlFor='merge_variables_salutation'>
-          Salutation: (for example: "Sincerely,")
-        </label>
-        <input
-          name='merge_variables_salutation'
-          onChange={this.handleChange}
-          value={this.state.merge_variables_salutation}
-        />
-
-        <label htmlFor='merge_variables_fromName'>From:</label>
-        <input
-          name='merge_variables_fromName'
-          onChange={this.handleChange}
-          value={this.state.merge_variables_fromName}
-        />
-        <Link to={{ pathname: '/confirmation', order: { ...this.state } }}>
-          <button className='button'>Send Card</button>
-        </Link>
-
-        {/* <button className='button' type='submit'>
-          Submit Order
-        </button> */}
       </form>
     );
   }
