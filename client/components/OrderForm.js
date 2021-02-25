@@ -116,54 +116,57 @@ class OrderForm extends React.Component {
           </fieldset>
           <fieldset className='fieldset'>
             <legend>Sender Details</legend>
+            <div className='senderDetails'>
+              <div className='fromAddress'>
+                <input
+                  name='from_name'
+                  className='inputFull'
+                  onChange={this.handleChange}
+                  value={this.state.from_name}
+                  placeholder='Name'
+                />
 
-            <input
-              name='from_name'
-              className='inputFull'
-              onChange={this.handleChange}
-              value={this.state.from_name}
-              placeholder='Name'
-            />
+                <input
+                  name='from_address_line1'
+                  className='inputFull'
+                  onChange={this.handleChange}
+                  value={this.state.from_address_line1}
+                  placeholder='Street Address'
+                />
+                <div className='addressRow'>
+                  <input
+                    name='from_address_city'
+                    className='inputHalf'
+                    onChange={this.handleChange}
+                    value={this.state.from_address_city}
+                    placeholder='City'
+                  />
 
-            <input
-              name='from_address_line1'
-              className='inputFull'
-              onChange={this.handleChange}
-              value={this.state.from_address_line1}
-              placeholder='Street Address'
-            />
-            <div className='addressRow'>
-              <input
-                name='from_address_city'
-                className='inputHalf'
-                onChange={this.handleChange}
-                value={this.state.from_address_city}
-                placeholder='City'
-              />
+                  <input
+                    name='from_address_state'
+                    className='inputQuarter'
+                    onChange={this.handleChange}
+                    value={this.state.from_address_state}
+                    placeholder='State'
+                  />
 
-              <input
-                name='from_address_state'
-                className='inputQuarter'
-                onChange={this.handleChange}
-                value={this.state.from_address_state}
-                placeholder='State'
-              />
-
-              <input
-                name='from_address_zip'
-                className='inputQuarter'
-                onChange={this.handleChange}
-                value={this.state.from_address_zip}
-                placeholder='Zip'
-              />
-            </div>
-
-            <div id='orderSubmit'>
-              <Link
-                to={{ pathname: '/confirmation', order: { ...this.state } }}
-              >
-                <button className='button'>Send Card</button>
-              </Link>
+                  <input
+                    name='from_address_zip'
+                    className='inputQuarter'
+                    onChange={this.handleChange}
+                    value={this.state.from_address_zip}
+                    placeholder='Zip'
+                  />
+                </div>
+              </div>
+              <div className='orderSubmit'>
+                <Link
+                  className='sendCard'
+                  to={{ pathname: '/confirmation', order: { ...this.state } }}
+                >
+                  <button className='button'>Send Card</button>
+                </Link>
+              </div>
             </div>
           </fieldset>
         </div>
