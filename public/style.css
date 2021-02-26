@@ -15,7 +15,7 @@ body {
   width: 80vw;
   margin: 0px auto;
 
-  /* height: 100vh; */
+  height: 200vh;
   background-color: #c1e6d9;
 }
 
@@ -126,7 +126,7 @@ nav > h1 {
 
 .templateCard {
   height: 250px;
-  width: 200px;
+  width: 260px;
   margin: 5px 5px;
   text-align: center;
 }
@@ -169,4 +169,10 @@ a {
   text-decoration: none;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.homeButtonDiv {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
 }

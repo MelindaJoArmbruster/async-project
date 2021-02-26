@@ -64,13 +64,18 @@ class Confirmation extends React.Component {
           <br></br>
           Direct mail id number: {this.props.confirmation.lobId}
         </div>
-        <div>The images below may take 10-15 seconds to load...</div>
+        <div>
+          The confirmation images below will take 5-10 seconds to load...
+        </div>
+        <br />
         <div>
           <img className='singleTemplateImage' src={this.state.backImageURL} />
         </div>
+        <br />
         <div>
           <img className='singleTemplateImage' src={this.state.frontImageURL} />
         </div>
+        <br />
         <div>
           <Link to={{ pathname: '/templates' }}>
             <button className='button'>Choose another card</button>

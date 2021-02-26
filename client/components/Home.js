@@ -5,7 +5,13 @@ const Home = () => {
   return (
     <div className='homePgParent'>
       <img className='banner' src='/images/banner-thankyou-01.jpg' />
-
+      <div className='homeButtonDiv'>
+        <br />
+        <br />
+        <Link to='/templates'>
+          <button>Click Here to Get Started</button>
+        </Link>
+      </div>
       <div className='homePgLorem'>
         <p>
           Welcome to Gratitude, where sending a simple thank-you is just that -
